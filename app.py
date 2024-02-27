@@ -7,14 +7,21 @@ def subtract(x, y):
 def multiply(x, y):
     return x * y
 
+def divide(x, y):
+    if y != 0:
+        return x / y
+    else:
+        return "Error: Cannot divide by zero."
+ 
 def main():
     print("1. Add")
     print("2. Subtract")
     print("3. Multiply")
+    print("4. Divide")
 
-    choice = input("Enter choice (1, 2 or 3): ")
+    choice = input("Enter choice (1, 2, 3 or 4): ")
 
-    if choice not in ('1', '2', '3'):
+    if choice not in ('1', '2', '3', '4'):
         print("Invalid choice. Exiting.")
         return
 
@@ -30,6 +37,9 @@ def main():
     elif choice == '3':
         result = multiply(num1, num2)
         print(f"Result: {num1} * {num2} = {result}")
+    elif choice == '4':
+        result = divide(num1, num2)
+        print(f"Result: {num1} / {num2} = {result}")
 
 if __name__ == "__main__":
     main()
